@@ -114,7 +114,6 @@ public class Deck {
 	 * @throws Exception is thrown if there are no more cards left in the deck. 
 	 */
 	public Card drawNextRandomCard() throws Exception {
-		
 		if (cardsInDeck.size() == 0)
 			throw new Exception("There are no more cards left in the deck."); 
 		
@@ -123,4 +122,10 @@ public class Deck {
 		return card;
 	}
 	
+	/**
+	 * @return the number of cards remaining in the deck. 
+	 */
+	public int getNumberOfCardsRemaining() { 
+		return cardsInDeck.size(); 
+	}
 }
