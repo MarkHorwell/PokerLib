@@ -42,5 +42,14 @@ public abstract class Player implements Serializable {
 	/**
 	 * @return the cards that are in the player's Hand. AKA (Hole Cards)
 	 */
-	public abstract List<Card> getHoleCards(); 
+	public abstract List<Card> getHoleCards();
+
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Player [name=" + name + "]";
+	}
 }

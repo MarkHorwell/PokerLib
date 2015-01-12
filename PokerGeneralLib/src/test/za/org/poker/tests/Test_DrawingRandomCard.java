@@ -17,7 +17,7 @@ import za.org.poker.Deck;
  * @author Mark Horwell (f3632210)
  *
  */
-public class Test_DrawingARandomCard { 
+public class Test_DrawingRandomCard { 
 	
 	private Deck deck; 
 	

@@ -21,6 +21,7 @@ public class TexasPlayer extends Player {
 	private static final int MAX_NUMBER_OF_HOLE_CARDS = 2;
 	
 	private List<Card> holeCards = new ArrayList<Card>();
+
 	
 	/**
 	 * Default constructor.
@@ -34,6 +35,15 @@ public class TexasPlayer extends Player {
 	@Override
 	public List<Card> getHoleCards() {
 		return holeCards;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "TexasPlayer [holeCards=" + holeCards + ", getName()="
+				+ getName() + "]";
 	}
 
 }
