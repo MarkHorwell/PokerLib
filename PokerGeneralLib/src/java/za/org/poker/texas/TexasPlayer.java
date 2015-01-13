@@ -18,7 +18,7 @@ public class TexasPlayer extends Player {
 	private static final long serialVersionUID = -4543151729452375130L;
 
 	//	the maximum number of a cards that a texas holdem player may have is 2.
-	private static final int MAX_NUMBER_OF_HOLE_CARDS = 2;
+	public static final int MAX_NUMBER_OF_HOLE_CARDS = 2;
 	
 	private List<Card> holeCards = new ArrayList<Card>();
 

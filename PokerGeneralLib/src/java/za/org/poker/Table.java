@@ -2,6 +2,7 @@ package za.org.poker;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -17,6 +18,9 @@ public abstract class Table implements Serializable {
 	//	this array represents the players currently seated at the table. 
 	private final List<Player> players = new ArrayList<Player>(); 
 	
+	//	this is the deck of cards associated with this table. 
+	private Deck deckOfCards = new Deck(); 
+	
 	/**
 	 * This method is called internally to ensure that only players of a certain type
 	 * can sit at this table.  Example, you don't want Omaha players sitting a table that
@@ -25,6 +29,7 @@ public abstract class Table implements Serializable {
 	 */
 	protected abstract Class<? extends Player> getBaseClassOfPlayer();
 
+	
 	/**
 	 * Default constructor
 	 */
@@ -128,6 +133,29 @@ public abstract class Table implements Serializable {
 
 
 	/**
+	 * This method deals cards to each player.
+	 * @param numberOfCards is the number of cards that each player should have at the end of the deal.
+	 * @throws Exception
+	 */
+	public void dealCards(int numberOfCards) throws Exception {
+		
+		//	shuffle the deck of cards a random number of times. 
+		Integer randomSeconds = Calendar.getInstance().get(Calendar.SECOND);
+		deckOfCards.shuffleTheDeck(randomSeconds);
+		
+		//	work throw the players and draw cards where required to meet the number
+		// 	of cards required.  If you are simulating specific hands, it's likely
+		// you've statically set some the players hands and they will not need more cards.
+		for (Player player : players) { 
+			for (int x = player.getHoleCards().size(); x < numberOfCards; x++) { 
+				player.getHoleCards().add(deckOfCards.drawNextRandomCard()); 
+			}
+		}
+		
+	}
+
+
+	/**
 	 * @return the players the players that are currently sitting at the table. 
 	 */
 	public List<Player> getPlayers() {
@@ -141,5 +169,13 @@ public abstract class Table implements Serializable {
 	public int getnumberOfPlayersAtTable() {
 		return players.size(); 
 	}
-	
+
+
+	/**
+	 * @return the deck of cards that are associate with the table. 
+	 */
+	public Deck getDeckOfCards() {
+		return deckOfCards;
+	}
+
 }

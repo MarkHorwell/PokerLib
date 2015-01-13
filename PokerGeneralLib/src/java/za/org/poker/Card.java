@@ -1,5 +1,7 @@
 package za.org.poker;
 
+import javax.jws.Oneway;
+
 
 /**
  * This object is used to represent all the playing cards that may be used in a deck.
@@ -40,6 +42,6 @@ public class Card {
 	@Override
 	public String toString() {
 		return "Card [suit=" + suit + ", rank=" + rank + "]";
-	} 
+	}
 	
 }
