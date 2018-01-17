@@ -15,6 +15,12 @@ public abstract class Table implements Serializable {
 
 	private static final long serialVersionUID = -8049389619142782320L;
 	
+	//	this is the current big blind amount;
+	private double bigBlindAmount;
+	
+	//	this is the current small blind amount;
+	private double smallBlindAmount;
+	
 	//	this array represents the players currently seated at the table. 
 	private final List<Player> players = new ArrayList<Player>(); 
 	
@@ -178,4 +184,35 @@ public abstract class Table implements Serializable {
 		return deckOfCards;
 	}
 
+	/**
+	 * @return the current amount set for the big blind
+	 */
+	public double getBigBlindAmount() {
+		return bigBlindAmount;
+	}
+
+	/**
+	 * @param bigBlindAmount sets the amount for the big blind
+	 */
+	public void setBigBlindAmount(double bigBlindAmount) {
+		this.bigBlindAmount = bigBlindAmount;
+	}
+
+
+	/**
+	 * @return the amount set for the small blind
+	 */
+	public double getSmallBlindAmount() {
+		return smallBlindAmount;
+	}
+
+
+	/**
+	 * @param smallBlindAmount sets the amount for the small blind
+	 */
+	public void setSmallBlindAmount(double smallBlindAmount) {
+		this.smallBlindAmount = smallBlindAmount;
+	}
+	
+	
 }

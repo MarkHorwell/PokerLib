@@ -12,7 +12,6 @@ public class Deck {
 
 	private List<Card> cardsInDeck = new ArrayList<Card>();
 	
-	
 	/**
 	 * This is the default constructor and populates the deck with all possible cards.
 	 */
